@@ -1,16 +1,22 @@
 import { useState } from 'react';
-import './App.scss';
+import { Button, Space, Typography } from 'antd';
+import { presetPalettes } from '@ant-design/colors';
 
 function App() {
   const [count, setCount] = useState(0);
+  const { Title } = Typography;
 
   return (
-    <>
-      <h1>Vite + React + TS + SCSS + ESLint + Prettier</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>count is {count}</button>
-      </div>
-    </>
+    <Space
+      direction="vertical"
+      size="large"
+      style={{ display: 'flex', height: '100vh', justifyContent: 'center', alignItems: 'center' }}
+    >
+      <Title style={{ color: presetPalettes.cyan[8] }}>Vite + React + TS + SCSS + Ant + ESLint + Prettier</Title>
+      <Button size="large" onClick={() => setCount((count) => count + 1)}>
+        count is {count}
+      </Button>
+    </Space>
   );
 }
 
